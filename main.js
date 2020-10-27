@@ -10,6 +10,18 @@ $(document).ready( function() {
   $(next).click( function() {
     prevNext('next');
   })
+  //NAVIGA CON TASTIERA
+  $(document).keydown( function(event) {
+    console.log(event.keyCode);
+    //SINISTRA
+    if (event.keyCode == 37) {
+      prevNext('prev');
+    }
+    //DESTRA
+    else if (event.keyCode == 39) {
+      prevNext('next');
+    }
+  })
 })
 
 //FUNZIONE NAVIGA AVANTI INDIETRO
@@ -39,8 +51,8 @@ function prevNext(direction) {
       $('body .container .slider-wrapper .nav i.last').addClass('active');
     }
     else {
-    $(imgActive).prev('img').addClass('active');
-    $(navActive).prev('i').addClass('active');
+      $(imgActive).prev('img').addClass('active');
+      $(navActive).prev('i').addClass('active');
     }
-  }  
+  }
 }
