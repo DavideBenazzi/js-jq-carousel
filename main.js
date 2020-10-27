@@ -22,10 +22,14 @@ function prevNext(direction) {
   imgActive.removeClass('active');
   navActive.removeClass('active');
 
-  //DIREZIONE NEXT
+  //DIREZIONE
   if (direction === 'next') {
     $(imgActive).next('img').addClass('active');
     $(navActive).next('i').addClass('active');
+  }
+  else if (direction === 'prev') {
+    $(imgActive).prev('img').addClass('active');
+    $(navActive).prev('i').addClass('active');
   }
 
 }
