@@ -24,12 +24,23 @@ function prevNext(direction) {
 
   //DIREZIONE
   if (direction === 'next') {
-    $(imgActive).next('img').addClass('active');
-    $(navActive).next('i').addClass('active');
+    if ( imgActive.hasClass('last') ) {
+      $('body .container .slider-wrapper .images img.first').addClass('active');
+      $('body .container .slider-wrapper .nav i.first').addClass('active');
+    }
+    else {
+      $(imgActive).next('img').addClass('active');
+      $(navActive).next('i').addClass('active');
+    }
   }
   else if (direction === 'prev') {
+    if ( imgActive.hasClass('first') ) {
+      $('body .container .slider-wrapper .images img.last').addClass('active');
+      $('body .container .slider-wrapper .nav i.last').addClass('active');
+    }
+    else {
     $(imgActive).prev('img').addClass('active');
     $(navActive).prev('i').addClass('active');
-  }
-
+    }
+  }  
 }
